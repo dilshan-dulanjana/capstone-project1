@@ -47,7 +47,13 @@ function SignIn() {
         if (response.data.category === 'Traveler') {
           navigate('/traveler');
         } else if (response.data.category === 'AccommodationOwner') {
-          navigate('/accommodation-owner-home');
+          navigate('/Ac');
+        }
+        else if (response.data.category === 'Admin') {
+          navigate('/Admin');
+        }
+        else if (response.data.category === 'AccommodationOwner') {
+          navigate('/Ac');
         }
       } else {
         alert('Invalid email or password');
