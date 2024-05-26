@@ -1,5 +1,6 @@
 
 import "./Homebody.css";
+import "./Table.css";
 import sigiriya from "../assets/sigiriya.jpg";
 import yala from "../assets/Yal.jpg";
 import galle from "../assets/galle.jpeg";
@@ -14,7 +15,7 @@ import dabulla from "../assets/dabulla.webp";
 import horton from "../assets/97.jpg";
 import Aubowan from "../assets/Ayubowan.svg";
 import Au from "../assets/YU.webp";
-
+import profile from "../assets/profile.png"
 import Asalap from "../assets/Asalap.png";
 import vesak from "../assets/vesak.png";
 import Devali from "../assets/Devali.png";
@@ -31,7 +32,7 @@ import blacklist from "../assets/blacklist.png";
 import perahara from "../assets/perahara.jpg";
 import Travelhomeimg from "../assets/trh.webp"
 import React, { useEffect } from 'react';
-import { Card, Button, Row, Col } from 'react-bootstrap';
+import { Card, Button, Row, Col,Table } from 'react-bootstrap';
 import 'aos/dist/aos.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
@@ -62,7 +63,7 @@ function Travelerhomebody() {
                 <br />
                 <Row>
                     <Col md={6} xs={12} sm={12}>
-                        <img src={Aubowan} className="img-fluid   " alt="" style={{ maxWidth: '550px', height: 'auto', display: 'inline-block', marginRight: '5px', marginLeft: '5px' ,padding:"10px"}} data-aos="fade-right" />
+                        <img src={Aubowan} className="img-fluid   " alt="" style={{ maxWidth: '550px', height: 'auto', display: 'inline-block', marginRight: '5px', marginLeft: '5px', padding: "10px" }} data-aos="fade-right" />
                     </Col>
                     <Col md={6} xs={12} sm={12}>
                         <img src={Au} className="img-fluid " alt="" style={{ maxWidth: '550px', height: 'auto', display: 'inline-block' }} data-aos="fade-left" />
@@ -86,18 +87,65 @@ function Travelerhomebody() {
                             <div style={{ display: 'flex', justifyContent: 'center' }}>
                                 <Card.Title>Come along and share the adventure with us!</Card.Title>
                             </div>
-                           <div  style={{ display: 'flex', justifyContent: 'center',fontSize:"18px" }}>
-                           <Card.Text>
-                            Join us now and you can earn money. Let's start our Adventure Travel
-                            </Card.Text>
-                           </div>
-                            <Button variant="primary" style={{width:"100%" ,padding:"10px"}}>Upload Your Travel Place</Button>
+                            <div style={{ display: 'flex', justifyContent: 'center', fontSize: "18px" }}>
+                                <Card.Text>
+                                    Join us now and you can earn money. Let's start our Adventure Travel
+                                </Card.Text>
+                            </div>
+                            <Button variant="primary" style={{ width: "100%", padding: "10px" }}>Upload Your Travel Place</Button>
                         </Card.Body>
                     </Card>
                 </Col>
             </Row>
 
             <br />
+
+            <div className="container  bg- ">
+
+                <div className="flex-container justify-content-center ">
+                    <h1 className="txt">Our Top Rated Travelers</h1>
+
+                </div>
+
+                <br />
+                <Table responsive className="custom-table bg-black   ">
+                    <thead style={{ backgroundColor: "blue" }}>
+                        <tr >
+                            <th>ID</th>
+                            <th>Profile Photo</th>
+                            <th>Name</th>
+                            <th>Points</th>
+                            <th>Ranks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td><img src={profile} alt="" className="profile-img" /></td>
+                            <td>Dilshan</td>
+                            <td>110</td>
+                            <td>1</td>
+
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><img src={profile} alt="" className="profile-img" /></td>
+                            <td>Dilshan</td>
+                            <td>110</td>
+                            <td>1</td>
+
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><img src={profile} alt="" className="profile-img" /></td>
+                            <td>Dilshan</td>
+                            <td>110</td>
+                            <td>1</td>
+
+                        </tr>
+                    </tbody>
+                </Table>
+            </div>
             <div className="famousplace">
                 <h1 className="text1">Most Famous Travel Places In Sri Lanka</h1>
 
