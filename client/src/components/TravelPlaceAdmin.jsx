@@ -5,7 +5,7 @@ import { faMenorah, faComment, faDatabase, faChartBar, faCog, faSignOutAlt, faUs
 
 function TravelPlaceAdmin() {
   return (
-    <div className="container  d-flex">
+    <div className="container d-flex">
       <nav>
         <ul>
           <li>

@@ -1,14 +1,6 @@
 /*  import google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-*{
-  margin: 0;
-  padding: 0;
-  outline: none;
-  border: none;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+
 body{
   background: rgb(226, 226, 226);
 }
@@ -46,14 +38,7 @@ nav:hover{
   font-size: 18px;
   text-transform: uppercase;
 }
-a{
-  position: relative;
-  width: 280px;
-  font-size: 14px;
-  color: rgb(85, 83, 83);
-  display: table;
-  padding: 10px;
-}
+
 nav .fas{
   position: relative;
   width: 70px;
@@ -79,9 +64,7 @@ a:hover i{
   bottom: 0;
 }
 
-.container{
-  display: flex;
-}
+
 
 /* MAin Section */
 .main{
