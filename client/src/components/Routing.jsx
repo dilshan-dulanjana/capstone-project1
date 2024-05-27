@@ -6,6 +6,9 @@ import SignIN from './SignIN';
 import TravelerHome from './TravelerHome';
 import AccomodationOwner from './AccomodationOwner';
 import Admin from './Admin';
+import TravelPlaceAdmin from './TravelPlaceAdmin';
+
+
 
 function Routing() {
   return (
@@ -18,6 +21,7 @@ function Routing() {
           <Route path="/traveler" element={<TravelerHome/>}/>
           <Route path="/Ac" element={<AccomodationOwner/>}/>
           <Route path= "/Admin" element={<Admin/>}/>
+          <Route path ="/Tadmin" element ={<TravelPlaceAdmin/>}/>
         </Routes>
       </div>
     </Router>

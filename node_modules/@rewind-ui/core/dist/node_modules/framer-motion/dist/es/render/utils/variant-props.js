@@ -1,0 +1,1 @@
+const i=["animate","whileInView","whileFocus","whileHover","whileTap","whileDrag","exit"],e=["initial",...i];export{i as variantPriorityOrder,e as variantProps};

@@ -1,0 +1,1 @@
+import{jsx as r}from"react/jsx-runtime";import{useComponentTheme as o}from"../../../theme/theme.context.js";import{usePropId as e}from"../../../utils/usePropId.js";const t=t=>{const s=o("Dropdown"),{color:m="gray",className:c=""}=t,i=e(t.id);return r("hr",{id:i,className:s.divider({color:m,className:c})})};export{t as DropdownDivider};

@@ -1,0 +1,1 @@
+import{useEffect as e}from"react";function r(r,n,t){e((()=>{if(!n)return;const e=e=>{e.key===r&&t&&(t(e),"ArrowDown"!==e.key&&"ArrowUp"!==e.key||e.preventDefault())};return document.addEventListener("keydown",e),()=>{document.removeEventListener("keydown",e)}}),[r,t,n])}export{r as useKeypress};

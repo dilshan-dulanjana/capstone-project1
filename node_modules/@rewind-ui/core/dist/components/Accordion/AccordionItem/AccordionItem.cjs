@@ -1,0 +1,1 @@
+"use strict";var e=require("react/jsx-runtime"),r=require("./AccordionItem.context.cjs");const c=c=>{const{anchor:o,children:t}=Object.assign({},c),n={anchor:o,bodyId:`${o}-body`,headerId:`${o}-header`};return e.jsx(r.AccordionItemContextProvider,Object.assign({value:n},{children:t}))};c.displayName="AccordionItem",exports.AccordionItem=c;
