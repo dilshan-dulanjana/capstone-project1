@@ -60,7 +60,7 @@ function Signup() {
     setValidated(true);
 
     try {
-      const response = await axios.post('http://localhost:8081/signup', {
+      const response = await axios.post('http://localhost:8070/signup', {
         name,
         email,
         password,
@@ -75,7 +75,11 @@ function Signup() {
       }
     } catch (error) {
       console.error('Error signing up:', error);
-      alert('Email already in use or Error. Please try again.');
+      if (error.response && error.response.data && error.response.data.message === 'Email already in use') {
+        alert('Email already in use.');
+      } else {
+        alert('Error signing up. Please try again.');
+      }
     }
   };
 
@@ -136,7 +140,6 @@ function Signup() {
                     <Form.Group controlId="validationCustom02" style={{ width: "100%" }}>
                       <Form.Label>Category :</Form.Label>
                       <Form.Select required value={category} onChange={handleCategoryChange} name="category">
-                        
                         <option value="">...</option>
                         <option value="Traveler">Traveler</option>
                         <option value="AccommodationOwner">Accommodation Owner</option>
