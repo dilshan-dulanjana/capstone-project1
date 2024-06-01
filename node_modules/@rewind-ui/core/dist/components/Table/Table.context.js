@@ -1,0 +1,1 @@
+import{createElementContext as o}from"../../hooks/use-element-context.hook.js";const[e,n]=o("Table compound components cannot be rendered outside the Table component");export{e as TableContextProvider,n as useTableContext};

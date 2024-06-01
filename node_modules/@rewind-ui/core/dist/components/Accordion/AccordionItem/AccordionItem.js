@@ -1,0 +1,1 @@
+import{jsx as e}from"react/jsx-runtime";import{AccordionItemContextProvider as r}from"./AccordionItem.context.js";const o=o=>{const{anchor:c,children:t}=Object.assign({},o),n={anchor:c,bodyId:`${c}-body`,headerId:`${c}-header`};return e(r,Object.assign({value:n},{children:t}))};o.displayName="AccordionItem";export{o as AccordionItem};

@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfileNavigate from './ProfileNavigate'
 import Travelerhomebody from './Travelerhomebody'
+import Footer from './Footer'
 
 function TravelerHome() {
   return (
@@ -8,7 +9,7 @@ function TravelerHome() {
     
     <ProfileNavigate/>
     <Travelerhomebody/>
-    
+    <Footer/>
     </>
   )
 }

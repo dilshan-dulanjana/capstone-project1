@@ -1,0 +1,1 @@
+import{createElementContext as o}from"../../hooks/use-element-context.hook.js";const[e,n]=o("Card compound components cannot be rendered outside the Card component");export{e as CardContextProvider,n as useCardContext};

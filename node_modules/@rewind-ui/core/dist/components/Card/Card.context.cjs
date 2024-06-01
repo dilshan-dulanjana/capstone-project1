@@ -1,0 +1,1 @@
+"use strict";var e=require("../../hooks/use-element-context.hook.cjs");const[t,o]=e.createElementContext("Card compound components cannot be rendered outside the Card component");exports.CardContextProvider=t,exports.useCardContext=o;

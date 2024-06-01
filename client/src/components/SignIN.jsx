@@ -37,19 +37,27 @@ function SignIn() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8081/signin', {
+      const response = await axios.post('http://localhost:8070/signin', {
         email,
         password
       });
 
       if (response.data.message === "success") {
         alert('Login successfully!');
-        if (response.data.category === 'Traveler') {
+        const category = response.data.category;
+        if (category === 'Traveler') {
           navigate('/traveler');
-        } else if (response.data.category === 'AccommodationOwner') {
-          navigate('/accommodation-owner-home');
+        } else if (category === 'AccommodationOwner') {
+          navigate('/accommodation-owner');
+        } else if (category === 'Driver') {
+          navigate('/driver');
+        } else if (category === 'TravelAgent') {
+          navigate('/travel-agent');
+        } else if (category === 'Admin') {
+          navigate('/admin');
         }
-      } else {
+      }
+       else {
         alert('Invalid email or password');
       }
     } catch (error) {

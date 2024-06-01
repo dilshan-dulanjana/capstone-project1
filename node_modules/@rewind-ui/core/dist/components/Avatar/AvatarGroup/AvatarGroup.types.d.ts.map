@@ -1,0 +1,1 @@
+{"version":3,"file":"AvatarGroup.types.d.ts","sourceRoot":"","sources":["../../../../src/components/Avatar/AvatarGroup/AvatarGroup.types.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,qBAAqB,EAAE,yBAAyB,EAAE,MAAM,OAAO,CAAC;AAEzE,MAAM,WAAW,gBAAiB,SAAQ,qBAAqB,CAAC,KAAK,CAAC;CAAG;AAEzE,MAAM,MAAM,oBAAoB,GAAG,yBAAyB,CAAC,gBAAgB,CAAC,GAAG;IAC/E,WAAW,CAAC,EAAE,MAAM,CAAC;CACtB,CAAC"}
