@@ -1,0 +1,2 @@
+'use client';
+"use strict";var e=require("tslib"),r=require("react/jsx-runtime"),s=require("../../../theme/theme.context.cjs"),t=require("../../../utils/usePropId.cjs");const a=require("react").forwardRef(((a,i)=>{const c=s.useComponentTheme("Avatar"),u=Object.assign({},a),{children:n,className:o=""}=u,d=e.__rest(u,["children","className"]),l=t.usePropId(a.id);return r.jsx("div",Object.assign({id:l,ref:i,className:c.group({className:o})},d,{children:n}))}));a.displayName="AvatarGroup",module.exports=a;

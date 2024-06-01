@@ -1,0 +1,1 @@
+import{createElementContext as o}from"../../hooks/use-element-context.hook.js";const[e,n]=o("Popover compound components cannot be rendered outside the Popover component");export{e as PopoverContextProvider,n as usePopoverContext};

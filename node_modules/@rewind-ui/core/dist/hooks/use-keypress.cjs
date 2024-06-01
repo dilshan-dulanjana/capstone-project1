@@ -1,0 +1,1 @@
+"use strict";var e=require("react");exports.useKeypress=function(r,t,n){e.useEffect((()=>{if(!t)return;const e=e=>{e.key===r&&n&&(n(e),"ArrowDown"!==e.key&&"ArrowUp"!==e.key||e.preventDefault())};return document.addEventListener("keydown",e),()=>{document.removeEventListener("keydown",e)}}),[r,n,t])};

@@ -1,0 +1,1 @@
+import{cva as t}from"class-variance-authority";const o=t("",{variants:{side:{top:"bottom","top-start":"bottom","top-end":"bottom",right:"left","right-start":"left","right-end":"left",bottom:"top","bottom-start":"top","bottom-end":"top",left:"right","left-start":"right","left-end":"right"}}});export{o as arrowSideDictionary};

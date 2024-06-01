@@ -1,0 +1,2 @@
+'use client';
+import{__rest as r}from"tslib";import{jsx as e}from"react/jsx-runtime";import{useComponentTheme as t}from"../../../theme/theme.context.js";import{usePropId as s}from"../../../utils/usePropId.js";import{forwardRef as a}from"react";const m=a(((a,m)=>{const i=t("Avatar"),o=Object.assign({},a),{children:c,className:l=""}=o,n=r(o,["children","className"]),p=s(a.id);return e("div",Object.assign({id:p,ref:m,className:i.group({className:l})},n,{children:c}))}));m.displayName="AvatarGroup";export{m as default};

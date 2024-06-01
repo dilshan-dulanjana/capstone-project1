@@ -1,0 +1,1 @@
+const r=()=>({style:{},transform:{},transformOrigin:{},vars:{}});export{r as createHtmlRenderState};
