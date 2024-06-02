@@ -1,7 +1,10 @@
-// import Home from "./Dilshan/Home"
-import Routing from "./components/Routing";
-// import Signup from "./Dilshan/Signup"
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+//import Routing from "./components/Routing"
+//import AccomodationBody from "./pages/accomodationhomepage/AccomodationBody"
+//import TravelerHome from "./pages/travelerhomepage/TravelerHome"
+
+import AgentHome from "./pages/agenthomepage/AgentHome"
 
 
 
@@ -12,10 +15,11 @@ function App() {
   
   return (
   <div>
-  <Routing/>
-
-
-
+ 
+  {/* <TravelerHome/> */}
+  {/* <AccomodationBody/> */}
+  {/* <Routing/> */}
+  <AgentHome/>
   </div>
   )
 }

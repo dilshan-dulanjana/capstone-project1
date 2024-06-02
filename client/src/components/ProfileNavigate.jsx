@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Navigate.css";
+import "../components/navigationbar/Navigate.css";
 import img1 from '../assets/img2.jpg';
 import img2 from '../assets/img3.jpeg';
 import img3 from '../assets/img4.jpg';

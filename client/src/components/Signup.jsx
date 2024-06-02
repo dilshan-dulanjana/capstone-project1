@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Signup.css';
 import { Container, Row, Col, Button, Form, InputGroup } from 'react-bootstrap';
 import signupimg from '../assets/signup.webp';
-import Footer from './Footer';
+import Footer from '../components/footer/Footer';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';

@@ -1,0 +1,42 @@
+.custom-table {
+    background-color: #1a237e; /* Dark blue background color */
+    color: rgb(16, 9, 9); /* White font color */
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    border-color: rgb(3, 2, 2); /* White border color */
+  }
+  
+  .custom-table th {
+    border-bottom-width: 5px; /* Bottom border thickness for table headings */
+  }
+  .profile-img {
+    width: 40px; /* Set the width */
+    height: 40px; /* Set the height */
+    object-fit: cover; /* Ensure the image covers the area */
+    border-radius: 50%; /* Make the image round */
+  }
+  
+  .txt{
+  
+    font-family:   Radio Canada;
+    font-size: 30px;
+    font-weight: 100;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+  }
+  .flex-container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+  }
+  
+  .flex-container .txt {
+    margin-right: 10px; /* Add some space between the text and the image */
+  }
+  .star1{
+    width: 60px; /* Set the width */
+    height: 60px;
+  
+  }

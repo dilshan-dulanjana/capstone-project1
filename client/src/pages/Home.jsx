@@ -1,6 +1,6 @@
-import Footer from './Footer'
-import Homebody from './Homebody'
-import Navigate from './Navigate'
+import Footer from '../components/footer/Footer'
+import Homebody from '../components/homebody/Homebody'
+import Navigate from '../components/navigationbar/Navigate'
 
 
 function Home(){
