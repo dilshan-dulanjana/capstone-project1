@@ -252,7 +252,7 @@ function SelectedPlace() {
                   </div>
                 </Card.Body>
               </Card>
-
+                 <></>
               
             </div>
           </Col>
