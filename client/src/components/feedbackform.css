@@ -1,0 +1,31 @@
+
+.FeedbackForm {
+    text-align: center;
+  }
+  
+  .btn0 {
+    background-color: #ff0000; /* Red color for btn0 */
+    color: #ffffff; /* White text color for btn0 */
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn0:hover {
+    background-color: #8B0A1A; /* Darker red hover color for btn0 */
+  }
+  
+  .btn1 {
+    background-color: #ff0000; /* Red color for btn1 */
+    color: #ffffff; /* White text color for btn1 */
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn1:hover {
+    background-color: #8B0A1A; /* Darker red hover color for btn1 */
+  }
+  

@@ -1,0 +1,75 @@
+.container2 {
+    height: auto;
+    background-color: silver;
+    padding: 20px;
+  }
+  
+  .background1 {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-left:20px;
+  }
+  
+  .background1 .inputs1 {
+    margin: auto;
+    text-align: left; /* Add left padding to the information column */
+  }
+  
+  .background1 .image1 {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .name1 {
+    font-size: xx-large;
+  }
+  
+  .details1 {
+    font-size: large;
+    font-weight: bold;
+  }
+  
+  .background1 .btn {
+    width: 120px;
+    margin: 5px;
+  }
+  
+  @media (max-width: 600px) {
+    .container1 {
+      padding: 10px;
+    }
+  
+    .background1 {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  
+    .background1 .image1 {
+      height: 150px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container1 {
+      padding: 5px;
+    }
+  
+    .background1 {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  
+    .background1 .image1 {
+      height: 100px;
+      width: 100px;
+    }
+  }
+  

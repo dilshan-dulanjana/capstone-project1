@@ -23,7 +23,7 @@
   background-color: #04aa6d;
   color: white;
 
-  margin-left: 30px;
+ 
 }
 
 .topnav .icon {
@@ -57,7 +57,7 @@
 }
 
 .xx {
-  margin-left: 50px;
+ 
   font-family: Poetsen One;
   font-size: 20px;
   justify-content: center; 
@@ -65,6 +65,20 @@
   text-align: center; 
   
 }
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* other existing styles */
+}
+
+.topnav .profile-dropdown {
+  margin-left: auto; /* Aligns the profile dropdown to the right */
+}
+
+/* Add any other existing styles */
+
 
 
 

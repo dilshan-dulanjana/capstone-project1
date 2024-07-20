@@ -1,0 +1,22 @@
+.thirdpage {
+    margin-left: 20px;
+  }
+  
+  .trip-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .trip-card h3 {
+    margin: 0;
+    padding-bottom: 8px;
+  }
+  
+  .trip-card p {
+    margin: 0;
+    padding-bottom: 16px;
+  }
+  

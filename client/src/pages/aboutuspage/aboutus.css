@@ -1,0 +1,103 @@
+/* General container styling */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Background image styling */
+.background-image {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+.background-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+.about-us-container {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 20px;
+}
+
+.header {
+  font-size: 2.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+}
+
+.sigiriya {
+  max-width: 100%;
+  height: auto;
+
+}
+
+
+
+.span{
+  background-color: rgb(221, 246, 238);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Responsive text alignment */
+.text-center {
+  text-align: left;
+}
+
+
+/* Responsive spacing */
+.my-4 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* List styling */
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-unstyled .my-3 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    font-size: 2rem;
+  }
+
+  .about-us-container {
+    padding: 10px;
+  }
+
+  .my-4 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .list-unstyled .my-3 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+}

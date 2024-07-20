@@ -1,0 +1,47 @@
+/* News.css */
+
+/* Container styling */
+.container {
+    padding: 20px;
+  }
+  
+  /* Card styling */
+  .news-card {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s;
+  }
+  
+  .news-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Card image */
+  .news-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Card title */
+  .news-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Card text */
+  .news-card .card-text {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Button */
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

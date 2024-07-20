@@ -3,77 +3,115 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const bcrypt = require('bcrypt');
-const app = express();
-require('dotenv').config();
+const helmet = require('helmet');
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
+const travelPlaceRoutes = require('./routes/travelPlaceRoutes');
+ const tripRouter = require('./routes/tripRoutes');
+ const tripRoutes = require('./routes/tripRoutes');
+ const travelPlaceRoute = require('./routes/travelPlaces');
+const updateTripRoutes = require('./routes/updateTrip'); // Include the new route file
+const travelPlacesRoutes = require('./routes/travelPlaces');
+const tourguideRoutes = require('./routes/tourguideRoutes');
+const travelagentRoutes = require('./routes/travelagentRoutes');
+const ratingRoutes = require('./routes/ratingRoutes');
+const accommodationRoutes = require('./routes/accomdationRoutes');
+const accomadationRouts1 = require('./routes/accomadationRoutes1');
+const  travelplaceroutes1 = require('./routes/travelplaceRoutes1'); 
+
+const AdminRouts = require('./routes/AdminRoutes.js');
+//const RequestTravelPlaces = require('./routes/RequestTravelPlaces');
+dotenv.config();
 
 const PORT = process.env.PORT || 8070;
 const MONGODB_URL = process.env.MONGODB_URL;
 
-app.use(cors());
-app.use(bodyParser.json());
+const app = express();
 
-mongoose.connect(MONGODB_URL, {})
+// Enable CORS
+app.use(cors());
+app.use(express.json());
+
+// Set security HTTP headers
+app.use(helmet());
+
+// Parse JSON bodies
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Error handling middleware for JSON parsing
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+    console.error('Bad JSON');
+    return res.status(400).send({ message: 'Invalid JSON' });
+  }
+  next();
+});
+
+// Connect to MongoDB
+mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log('Mongodb Connection Successful');
+    console.log('MongoDB Connection Successful');
   })
   .catch((err) => {
     console.error('Failed to connect to MongoDB', err);
+    process.exit(1); // Exit process with failure
   });
 
-const connection = mongoose.connection;
-connection.once('open', () => {
-  console.log('Mongodb Connection Successful');
-});
+// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/travelplaces', travelPlaceRoutes);
+app.use('/api/travel-places', travelPlaceRoutes);
+//app.use('/api/requestTravelplace',RequestTravelPlaces );
+ app.use('/trips', tripRouter);
+ app.use('/travelplaces', travelPlaceRoute);
+app.use('/trips', updateTripRoutes); // Use the new route file
 
-const userSchema = new mongoose.Schema({
-  name: String,
-  email: { type: String, unique: true },
-  password: String,
-  category: String,
-});
 
-const User = mongoose.model('User', userSchema);
+app.use('/api/travel-places/all', travelPlacesRoutes);
+const ratingsRouter = require('./routes/ratings');
+app.use('/api/travelers', ratingsRouter);
 
-app.post('/signup', async (req, res) => {
-  const { name, email, password, category } = req.body;
-  try {
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ message: 'Email already in use' });
-    }
+app.use('/travelplaces', travelPlaceRoutes);
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ name, email, password: hashedPassword, category });
-    await newUser.save();
+app.use('/api/travelplaces', travelPlaceRoutes);
+app.use('/api/tourguides', tourguideRoutes);
+app.use('/api/travelagent', travelagentRoutes);;
 
-    res.status(200).json({ message: 'User registered successfully!' });
-  } catch (error) {
-    console.error('Error signing up:', error);
-    res.status(500).json({ message: 'Error signing up. Please try again.' });
-  }
-});
+app.use('/api2', travelPlaceRoutes);
+app.use('/api/travelplaces', travelPlaceRoutes);
+app.use('/api/travelplaces', travelPlaceRoutes); 
+app.use('/api/trips', tripRoutes);
+app.use('/api/travelplaces', travelPlaceRoutes);
+app.use('/api/trips', tripRoutes);
+app.use('/', travelPlaceRoutes);
+app.use('/api/travel-places', travelPlaceRoutes);
+app.use('/api/travel-places', travelPlaceRoutes);
+app.use('/api/ratings', ratingRoutes);
+app.use('/api1', accommodationRoutes);
 
-app.post('/signin', async (req, res) => {
-  const { email, password } = req.body;
-  try {
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ message: 'Invalid email or password' });
-    }
+app.use('/api/accommodation', accommodationRoutes);
+0
+app.use('/api/accommodations',accomadationRouts1);
+app.use('/api/accommodations', accomadationRouts1);
+// Routes
+app.use('/accommodation', accomadationRouts1);
+app.use('/travelplace123', accomadationRouts1);
+app.use('/api/travelplaces23', travelplaceroutes1);
+app.use('/api555', tripRoutes);
+app.use('/', travelplaceroutes1);
+app.use(travelplaceroutes1);
+app.use('/', accomadationRouts1);
 
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: 'Invalid email or password' });
-    }
+app.use('/api',AdminRouts);
 
-    res.status(200).json({ message: 'success', category: user.category });
-  } catch (error) {
-    console.error('Error signing in:', error);
-    res.status(500).json({ message: 'Error signing in. Please try again.' });
-  }
-});
+const packingListRoutes = require('./routes/packingListRoutes');
+app.use('/api/packinglists', packingListRoutes);
+app.use('/api/packinglists', packingListRoutes);
 
-app.listen(PORT, () => {
+0
+// Start the server
+app.listen(PORT, () => { 
   console.log(`Server is up and running on port number: ${PORT}`);
 });
