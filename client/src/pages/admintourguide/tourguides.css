@@ -1,0 +1,37 @@
+.tour-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: left;
+    width: calc(100% ); /* Ensure the card takes full width minus padding */
+    max-width: 800px; /* Optionally set a maximum width */
+    margin: auto; /* Center the card horizontally if desired */
+  }
+  .tour-guides {
+    padding: 20px;
+  }
+  
+  .agent1 {
+    margin-bottom: 20px;
+  }
+  
+  .request-button {
+    margin-bottom: 20px;
+  }
+  
+  .tour-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: left;
+    width: 100%; /* Ensure the card takes full width of the column */
+  }
+  
+  .tour-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  

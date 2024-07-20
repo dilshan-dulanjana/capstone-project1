@@ -1,0 +1,99 @@
+.famousplace {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+    text-align: center; 
+  }
+  
+  .famousplace h1 {
+    max-width: 100%; 
+    margin: 0 auto; 
+  }
+
+  .card{
+
+    margin: 20px;
+  }
+
+  .text1{
+
+    font-family: Poetsen One;
+    font-size: 60px;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+  }
+
+  .text2{
+    font-family: Radio Canada;
+    font-size: 30px;
+    font-weight: 100;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+
+  }
+
+  .text4{
+
+    
+    font-family: Radio Canada;
+    font-size: 30px;
+  }
+
+  .c-text{
+
+  
+    font-family:   Radio Canada;
+    font-size: 30px;
+    font-weight: 100;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+  }
+  .events-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Align text center */
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.events-title {
+    margin-bottom: 50px; /* Adjust as needed */
+    font-family:   Radio Canada;
+    font-size: 40px;
+}
+.custom-btn-width {
+  width: 200px; /* Adjust the width as needed */
+}
+.custom-figure-padding {
+  padding: 10px; /* Adjust the padding value as needed */
+}
+
+.custom-figure-padding {
+  padding: 1rem; /* Adjust the padding value as needed */
+}
+.custom-figure-padding {
+  padding: 1rem; /* Adjust the padding as needed */
+}
+
+.custom-img {
+  max-width: 100%;
+  max-height: 250px; /* Adjust the max height as needed */
+  object-fit: cover; /* Ensures the image covers the element without distortion */
+  width: 100%;
+  height: auto; /* This maintains the aspect ratio */
+}
+
+
+
+
+
+
+
+ 
+ 
+

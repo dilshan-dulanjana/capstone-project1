@@ -1,0 +1,23 @@
+.cc{
+
+     
+    font-family:   Radio Canada;
+    font-size: 30px;
+    font-weight: 100;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;  
+}
+
+.signup-form {
+    padding: 50px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  
+}
+.signup-form {
+    width: 100%;
+    max-width: 1000px;
+}

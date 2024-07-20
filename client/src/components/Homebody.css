@@ -87,7 +87,11 @@
   width: 100%;
   height: auto; /* This maintains the aspect ratio */
 }
-
+.card-img-top {
+  height: 200px; /* Adjust as needed */
+  width: 100%; 
+  object-fit: cover;
+}
 
 
 

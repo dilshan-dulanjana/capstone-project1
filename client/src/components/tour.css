@@ -1,0 +1,65 @@
+
+.container2 {
+    height: auto; /* Set height to auto for responsive behavior */
+    background-color: silver;
+    padding: 20px; /* Add some padding for better spacing */
+  }
+  
+  .background1 {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    justify-content: center; /* Center the items horizontally */
+  }
+  
+  .background1 .inputs1 {
+    margin: auto; /* Center the inputs vertically */
+  }
+  
+  .background1 .image1 {
+    width: 100%; /* Make the image take full width on small screens */
+    height: auto; /* Set height to auto for responsive behavior */
+  }
+
+  .name1{
+    font-size: xx-large;
+  }
+
+  .details1{
+    font-size: x-large;
+  }
+  
+  /* Responsive styles for screens smaller than 768px */
+  @media (max-width: 600px) {
+    .container1 {
+      padding: 10px; /* Reduce padding on smaller screens */
+    }
+  
+    .background1 {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  
+    .background1 .image1 {
+      height: 150px; /* Set a fixed height for the image on smaller screens */
+    }
+  }
+  
+  /* Responsive styles for screens smaller than 480px */
+  @media (max-width: 600px) {
+    .container1 {
+      padding: 5px; /* Further reduce padding on extra small screens */
+    }
+  
+    .background1 {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  
+    .background1 .image1 {
+      height: 100px; /* Adjust the image height for extra small screens */
+    }
+  }
+  

@@ -1,0 +1,27 @@
+.fourthpagerow{
+    padding-left: 150px;
+}
+.background{
+    background-color: rgb(195, 206, 206);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 1700px;
+}
+.row1{
+    padding-left: 150px;
+    color: royalblue;
+}
+.row2{
+    padding-left: 150px;
+    color: rgb(1, 7, 24);
+}
+.row3{
+    padding-left: 150px;
+    color: rgb(209, 35, 23);
+}
+.radio-mark {
+    height: 20px; 
+    width: 20px;
+    cursor: pointer;
+    position: relative;
+}

@@ -1,0 +1,60 @@
+
+  
+  .admin-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .heading {
+    margin-top: 20px;
+  }
+  
+  .subhead {
+    margin-bottom: 20px;
+  }
+  
+  .star {
+    color: red;
+  }
+  
+  form {
+    background-color: #e0e9f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form .form-control {
+    border-radius: 8px;
+  }
+  
+  form .btn-primary,
+  form .btn-secondary {
+    width: 10%;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .admin-container {
+      padding: 10px;
+    }
+  
+    .heading,
+    .subhead {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    form {
+      padding: 15px;
+    }
+  
+    form .btn-primary,
+    form .btn-secondary {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  

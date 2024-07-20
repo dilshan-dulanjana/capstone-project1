@@ -5,25 +5,100 @@ import img2 from '../assets/img3.jpeg';
 import img3 from '../assets/img4.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { Dropdown } from 'react-bootstrap';
-import profile from "../assets/profile.png";
-import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
-
+import { Dropdown, Alert, Button, Form, ListGroup } from 'react-bootstrap';
+import profile from '../assets/profile.png';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { decodeToken } from 'react-jwt';
+import Cookies from 'js-cookie';
+import { Link } from 'react-router-dom';
 
 export default function ProfileNavigate() {
-    const [userName, setUserName] = useState('Dilshan Dulanjana'); // Replace with actual user name source
-    const userProfileImage = profile; // Replace with actual image source
+    const [userName, setUserName] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
     const [show, setShow] = useState(false);
+    const navigate = useNavigate();
+    const userProfileImage = profile;
 
-    function myFunction() {
-        var x = document.getElementById("myTopnav");
+    useEffect(() => {
+        const token = Cookies.get('token');
+        if (token) {
+            const decodedToken = decodeToken(token);
+            console.log('Decoded Token:', decodedToken); // To verify token decoding
+            const userEmail = decodedToken.email;
+
+            // Fetch user data from the database using the email
+            axios.get(`http://localhost:8070/api/users/email/${userEmail}`)
+                .then(response => {
+                    console.log('User Data:', response.data); // To verify the API response
+                    setUserName(response.data.name);
+                })
+                .catch(error => {
+                    console.error('Error fetching user data:', error);
+                    if (error.response && error.response.status === 401) {
+                        handleLogout();
+                    }
+                });
+        } else {
+            navigate('/signin');
+        }
+    }, [navigate]);
+
+    const handleSearchQueryChange = (event) => {
+        const query = event.target.value;
+        setSearchQuery(query);
+        if (query.length > 0) {
+            axios.get(`http://localhost:8070/api/travelplaces23/search?locationName=${query}`, {
+                headers: {
+                    Authorization: `Bearer ${Cookies.get('token')}`
+                }
+            })
+                .then(response => {
+                    setSuggestions(response.data);
+                })
+                .catch(error => {
+                    console.error('Error fetching suggestions:', error);
+                });
+        } else {
+            setSuggestions([]);
+        }
+    };
+
+    const handleSelectSuggestion = (location) => {
+        console.log('Selected Accommodation:', location);
+        setSearchQuery(location.locationName);
+        setSuggestions([]);
+        navigate(`/SelectedPlace/${location._id}`, { state: { place: location } });
+    };
+
+    const handleSearch = () => {
+        axios.get(`http://localhost:8070/api/travelplaces23/search?locationName=${searchQuery}`, {
+            headers: {
+                Authorization: `Bearer ${Cookies.get('token')}`
+            }
+        })
+            .then(response => {
+                if (response.data.length > 0) {
+                    const travelPlace = response.data[0]; // Assuming the first result is the correct one
+                    navigate(`/SelectedPlace/${travelPlace._id}`, { state: { place: travelPlace } });
+                } else {
+                    console.error('No travel place found with the given name');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching travel place:', error);
+            });
+    };
+
+    const myFunction = () => {
+        const x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
             x.className += " responsive";
         } else {
             x.className = "topnav";
         }
-    }
+    };
 
     useEffect(() => {
         AOS.init({
@@ -35,32 +110,38 @@ export default function ProfileNavigate() {
         setShow(true);
     };
 
+    const handleLogout = () => {
+        Cookies.remove('token');
+        navigate('/signin');
+    };
+
     return (
         <div>
-            <div className="topnav w-auto" id="myTopnav" style={{ margin: 0 }}>
-                <a href="#home" className="active">Home</a>
-                <a href="#news" className='xx'>Contact us</a>
-                <a href="#contact" className='xx'>Tourism News</a>
+            <div className="topnav" id="myTopnav" style={{ margin: 0 }}>
+                <a href="/" className="active">Home</a>
+                <a href="/Contactus" className='xx'>Contact us</a>
+                <a href="/News" className='xx'>Tourism News</a>
                 <a href="#about" className='xx'>Video Streaming</a>
-                <a href="#about" className='xx'>About us</a>
-                <a href="#about" className='xx'>Upcoming Events</a>
-                <a href="#about" className='xx'>Tourism Hotline</a>
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic" onClick={handleProfileClick} style={{ display: 'flex', alignItems: 'center', marginTop:"5px"}}>
-                        <img
-                            src={userProfileImage}
-                            alt="User Profile"
-                            style={{ borderRadius: '50%', width: '30px', height: '30px', marginRight: '8px' }}
-                        />
-                        {userName}
-                    </Dropdown.Toggle>
+                <a href="/aboutus" className='xx'>About us</a>
+                <a href="/UpcomingEvents" className='xx'>Upcoming Events</a>
+                <a href="/Planyourtrip" className='xx'>Plan Your Trip</a>
+                <div className="profile-dropdown">
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic" onClick={handleProfileClick} style={{ display: 'flex', alignItems: 'center', marginTop: "1px" }}>
+                            <img
+                                src={userProfileImage}
+                                alt="User Profile"
+                                style={{ borderRadius: '50%', width: '30px', height: '30px', marginRight: '8px' }}
+                            />
+                            {userName && `Welcome, ${userName}`}
+                        </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-
-                    </Dropdown.Menu>
-                </Dropdown>
-                <a href="javascript:void(0);" className="icon" onClick={myFunction}>
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </div>
+                <a href="#" className="icon" onClick={myFunction}>
                     <i className="fa fa-bars"></i>
                 </a>
             </div>
@@ -80,16 +161,14 @@ export default function ProfileNavigate() {
                     </p>
                     <hr />
                     <div className="d-flex justify-content-end">
-                        <Button variant="outline-danger"style={{ marginRight: "10%" }}>Log Out</Button>{' '}
+                        <Button variant="outline-danger" style={{ marginRight: "10%" }} onClick={handleLogout}>Log Out</Button>{' '}
                         <Button variant="outline-primary" style={{ marginRight: "10%" }}>View Profile</Button>{' '}
                         <Button onClick={() => setShow(false)} variant="outline-success">
                             Close
                         </Button>
-
                     </div>
                 </Alert>
             )}
-
 
             <br />
             <div className="bg-black d-flex justify-content-center align-items-center" style={{ height: 'auto' }} data-aos="zoom-in-down">
@@ -124,17 +203,39 @@ export default function ProfileNavigate() {
             <div className="bg-black d-flex justify-content-center align-items-center" style={{ minHeight: '10vh' }}>
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-md-6">
-                            <form className="input-group">
-                                <input type="text" className="form-control" style={{ maxWidth: '500px' }} placeholder="Search Travel Place" aria-label="search" />
-                                <button className="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+                        <div className="col-md-6 d-flex align-items-center">
+                            <Form.Group className="mb-3 flex-grow-1">
+                                <Form.Label>Search Location</Form.Label>
+                                <div className="d-flex align-items-center">
+                                    <Form.Control
+                                        type="text"
+                                        placeholder="Search by location name"
+                                        value={searchQuery}
+                                        onChange={handleSearchQueryChange}
+                                        className="mr-2 flex-grow-1"
+                                    />
+                                    <Button onClick={handleSearch} className="ml-2">Search</Button>
+                                </div>
+                                {suggestions.length > 0 && (
+                                    <ListGroup>
+                                        {suggestions.map((location) => (
+                                            <ListGroup.Item
+                                                key={location._id}
+                                                action
+                                                onClick={() => handleSelectSuggestion(location)}
+                                            >
+                                                {location.locationName}
+                                            </ListGroup.Item>
+                                        ))}
+                                    </ListGroup>
+                                )}
+                            </Form.Group>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <br /><br />
+          <br />
+     
         </div>
     );
 }

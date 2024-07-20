@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Signup.css';
 import { Container, Row, Col, Button, Form, InputGroup } from 'react-bootstrap';
 import signupimg from '../assets/signup.webp';
-import Footer from './Footer';
+import Footer from './footer/Footer';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +19,7 @@ function Signup() {
   const [category, setCategory] = useState('');
 
   const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.(com|lk)$/i;
-  const nameRegex = /^[a-zA-Z\s'-]+$/;
+  const nameRegex = /^[A-Za-z\s]+$/; // Updated regex to allow only letters and spaces
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -37,8 +37,10 @@ function Signup() {
 
   const handleNameChange = (event) => {
     const inputName = event.target.value;
-    setName(inputName);
-    setNameValid(nameRegex.test(inputName));
+    if (nameRegex.test(inputName) || inputName === '') { // Allow only letters, spaces, and empty input
+      setName(inputName);
+      setNameValid(nameRegex.test(inputName));
+    }
   };
 
   const handleCategoryChange = (event) => {
@@ -60,12 +62,16 @@ function Signup() {
     setValidated(true);
 
     try {
-      const response = await axios.post('http://localhost:8070/signup', {
+      console.log('Submitting sign-up request with:', { name, email, password, category });
+      const endpoint = category === 'Admin' ? 'adminsignup' : 'signup';
+      const response = await axios.post(`http://localhost:8070/api/auth/${endpoint}`, {
         name,
         email,
         password,
         category
       });
+
+      console.log('Response received:', response.data);
 
       if (response.status === 200) {
         alert('User registered successfully!');
@@ -97,7 +103,7 @@ function Signup() {
       <Container fluid style={{ maxWidth: "100%" }}>
         <Row>
           <div className="topnav" id="myTopnav">
-            <a href="#home" className="active">Home</a>
+            <a href="/" className="active">Home</a>
             <a href="#news" className='xx'>Contact us</a>
             <a href="#contact" className='xx'>Tourism News</a>
             <a href="#about" className='xx'>Video Streaming</a>
@@ -128,6 +134,8 @@ function Signup() {
                         placeholder="Enter Your Name"
                         value={name}
                         onChange={handleNameChange}
+                        pattern="[A-Za-z\s]+" // Allow only letters and spaces
+                        title="Name can only contain letters and spaces."
                         isInvalid={validated && !nameValid}
                       />
                       <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -143,7 +151,7 @@ function Signup() {
                         <option value="">...</option>
                         <option value="Traveler">Traveler</option>
                         <option value="AccommodationOwner">Accommodation Owner</option>
-                        <option value="Driver">Driver</option>
+                        <option value="Driver">Tour Guide</option>
                         <option value="TravelAgent">Travel Agent</option>
                         <option value="Admin">Non-customer</option>
                       </Form.Select>

@@ -11,16 +11,27 @@
     "start": "vite"
   },
   "dependencies": {
+    "@react-leaflet/core": "^2.1.0",
     "aos": "^2.3.4",
+    "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.3",
     "firebase": "^10.12.0",
+    "formik": "^2.4.6",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
+    "leaflet": "^1.9.4",
+    "leaflet-routing-machine": "^3.2.12",
     "mdb-react-ui-kit": "^8.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
-    "react-router-dom": "^6.23.1"
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.23.1",
+    "react-toastify": "^10.0.5",
+    "recharts": "^2.12.7",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

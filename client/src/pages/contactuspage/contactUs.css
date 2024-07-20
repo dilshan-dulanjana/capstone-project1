@@ -1,0 +1,140 @@
+
+  .background-image {
+    position: relative;
+  }
+  
+  .contact-image {
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+    
+  }
+
+
+  
+  .text-center p {
+    font-size: 18px;
+    margin-bottom: 0;
+   
+  }
+  
+  h4 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  
+  .header {
+    margin-bottom: 40px;
+      }
+  
+  p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .contact-image {
+      max-height: 250px;
+    }
+  
+    .text-center p {
+      font-size: 16px;
+    }
+  
+    h4 {
+      font-size: 20px;
+    }
+  
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .r1c1 {
+    background-color: rgb(209, 204, 204);
+    margin: 50px;
+    padding: 10px;
+
+  }
+
+  .dial {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(13, 188, 188);
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .call {
+    width: 30px;
+    height: 30px; 
+    
+  }
+
+
+  .r1c2{
+    background-color: rgb(209, 204, 204);
+    padding: 15px;
+    margin: 50px;
+  }
+
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+  }
+
+
+  .head-office {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(40, 6, 191);
+    font-size: 24px;
+  }
+
+  
+  .r2c1{
+    background-color: rgb(209, 204, 204);
+    padding: 15px;
+    margin: 50px;
+  }
+
+  .r2c2{
+    background-color: rgb(209, 204, 204);
+    padding: 15px;
+    margin: 50px;
+  }
+
+  .SLTPB {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(40, 6, 191);
+    font-size: 24px;
+  }
+
+  .SLTP {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(40, 6, 191);
+    font-size: 24px;
+  }
+
+
+  .location {
+    margin-left: 100px;
+  }
+
+  .telephone {
+    margin-left: 80px;
+  }
+
+  .fax {
+    margin-left: 132px;
+  }
+
+  .email {
+    margin-left: 120px;
+  }
